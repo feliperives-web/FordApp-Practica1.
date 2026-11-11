@@ -1,0 +1,43 @@
+﻿<Window x:Class="FordApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ford App - Práctica 1" Width="800" Height="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabecera común con 3 columnas -->
+        <Grid Grid.Row="0" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Logotipo -->
+                <ColumnDefinition Width="*"/>
+                <!-- Menú (Dinámico) -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Indicador Sesión -->
+            </Grid.ColumnDefinitions>
+
+            <!-- 1. Logotipo (Izquierda) -->
+            <Image Grid.Column="0" Source="pack://application:,,,/Assets/Images/logo.png" Width="100" Margin="10,0"/>
+
+            <!-- 2. Menú de navegación (Derecha) -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+                <Button Content="Inicio" Width="100" Margin="10,10" Click="BtnInicio_Click"/>
+                <Button Content="Galería" Width="100" Margin="10,10" Click="BtnGaleria_Click"/>
+                <Button Content="Acceso Clientes" Width="120" Margin="10,10" Click="BtnLogin_Click"/>
+            </StackPanel>
+
+            <!-- 3. Indicador GLOBAL de sesión -->
+            <StackPanel x:Name="PanelSesionGlobal" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,20,0" Visibility="Collapsed">
+                <Ellipse Width="10" Height="10" Fill="Green" Margin="0,0,5,0"/>
+                <TextBlock Text="Sesión iniciada" Foreground="Green" FontWeight="Bold" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                <Button Content="Cerrar sesión" Padding="10,4" Click="BtnCerrarSesionGlobal_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Contenedor de las 3 páginas -->
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

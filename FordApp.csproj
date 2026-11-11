@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\cochesjuntos.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\capri.jpg" />
+    <Resource Include="Assets\Images\cochesjuntos.jpg" />
+    <Resource Include="Assets\Images\explorer.jpg" />
+    <Resource Include="Assets\Images\kuga.jpg" />
+    <Resource Include="Assets\Images\logo.png" />
+    <Resource Include="Assets\Images\mach-e.jpg" />
+    <Resource Include="Assets\Images\puma.jpg" />
+    <Resource Include="Assets\Images\ranger.jpg" />
+  </ItemGroup>
+
+</Project>
